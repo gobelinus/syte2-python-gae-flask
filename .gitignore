@@ -1,0 +1,61 @@
+# Adapted from https://github.com/github/gitignore/blob/master/Python.gitignore
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+bin/
+build/
+develop-eggs/
+dist/
+eggs/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Translations
+*.mo
+
+# Sphinx documentation
+docs/_build/
+
+# Keep secret keys out of version control
+secret_keys*.py
+
+# local runserver wrapper over run command
+.DS_Store
+
+# local stuff
+app_dev.yaml
+app_live.yaml
+asset_version.py
+
+# Logging
+*.log
+*.log.*
+
+#
+node_modules
+lib/
+
+# project specifics
+application/static/js/*
+application/static/css/*

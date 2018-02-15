@@ -1,0 +1,34 @@
+{
+  "name": "syte2-python-gae-flask",
+  "version": "0.0.0",
+  "private": true,
+  "description": "python port of Syte2 http://github.com/rigoneri/syte2",
+  "dependencies": {
+    "bower": "^1.8.2"
+  },
+  "devDependencies": {
+    "bower": "^1.8.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-if": "^2.0.2",
+    "gulp-less": "^3.3.2",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-notify": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0"
+  },
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gobelinus/syte2-python-gae-flask.git"
+  },
+  "author": "https://github.com/gobelinus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gobelinus/syte2-python-gae-flask/issues"
+  },
+  "homepage": "https://github.com/gobelinus/syte2-python-gae-flask#readme"
+}

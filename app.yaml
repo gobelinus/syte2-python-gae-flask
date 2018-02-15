@@ -1,0 +1,70 @@
+application: <app_name>
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+default_expiration: "5d"
+
+builtins:
+- appstats: on
+- admin_redirect: on
+- deferred: on
+- remote_api: on
+
+libraries:
+- name: jinja2
+  version: "2.6"
+- name: markupsafe
+  version: "0.15"
+
+inbound_services:
+- warmup
+
+# If a new value is specified in app.yaml, it overrides the default value.
+# To extend the above regular express list, copy and paste the above list
+# into your app.yaml and add your own regular expressions.
+skip_files:
+- ^(.*/)?#.*#$
+- ^(.*/)?.*~$
+- ^(.*/)?.*\.py[co]$
+- ^(.*/)?.*/RCS/.*$
+- ^(.*/)?\..*$
+- ^(.*/)?build_assets.py
+- ^(.*/)?.*\.md$
+- ^(app_.*\.yaml)$
+- ^(.*/)?private/.*
+- ^(.*/)?tests/.*
+- ^(.*/)?node_modules/.*
+- ^(.*/)?package.json
+- ^(.*/)?bower.json
+- ^(.*/)?gulpfile.js
+
+handlers:
+- url: /favicon.ico
+  static_files: application/static/img/favicon.ico
+  upload: application/static/img/favicon.ico
+
+- url: /robots.txt
+  static_files: application/static/robots.txt
+  upload: application/static/robots.txt
+
+# for autoversion urls
+- url: /static/(img|css|js)/(?P<fname>.*?)(\.[0-9]*)?\.(?P<extn>.*)$
+  static_files: application/static/\1/\2.\4
+  upload: application/static/(img|css|js)/.*
+
+- url: /static/fonts/(.*\.woff)
+  static_files: application/static/fonts/\1
+  upload: application/static/fonts/(.*\.woff)
+  mime_type: application/font-woff
+
+- url: /static
+  static_dir: application/static
+
+- url: /admin/.*
+  script: run.application.app
+  login: admin
+
+- url: .*
+  script: run.application.app
