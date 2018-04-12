@@ -25,3 +25,13 @@ POST_ONLY = [HTTP_REQUEST_POST]
 # taskqueues related constants
 QUEUE_NAME_DEFAULT = 'default'
 QUEUE_NAME_TIMELINE = 'timeline'
+
+# batch sizes and pagination stuff
+TWEETS_PER_PAGE = 20
+
+# caching
+CACHE_TIME_DAY = 24 * 60 * 60  # 1 day
+
+# keys
+API_KEY_CURSORS = 'cursors'
+API_KEY_TWITTER = 'twitter'

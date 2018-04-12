@@ -57,6 +57,16 @@ app.add_url_rule('/admin/task/tweet-fetch',
                  methods=POST_ONLY,
                  )
 
+# get user stream
+app.add_url_rule('/stream/<page>', 'stream',
+                 view_func=views.get_stream)
+
+# twitter urls
+app.add_url_rule('/twitter/user', 'twitter_user',
+                 view_func=views.get_twitter_user)
+app.add_url_rule('/twitter/<page>', 'twitter_stream',
+                 view_func=views.get_twitter_stream)
+
 
 # Error handlers
 # Handle 404 errors
