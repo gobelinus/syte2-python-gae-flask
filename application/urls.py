@@ -43,6 +43,14 @@ from application.constants import (
 # appconfig.html#Warming_Requests
 app.add_url_rule('/_ah/warmup', 'warmup', view_func=views.warmup)
 
+# url to render partials required by angular app
+app.add_url_rule('/partials/<path>',
+                 'render_partials',
+                 view_func=views.render_partials)
+app.add_url_rule('/partials/<folder>/<path>',
+                 'render_partials',
+                 view_func=views.render_partials)
+
 # Home page
 app.add_url_rule('/', 'home', view_func=views.home)
 

@@ -1,0 +1,14 @@
+{% raw %}
+<div class="stream" id="main-stream" ng-class="{'animate-enter': animateEnter, 'visible': visible}">
+  <div class="stream-line"></div>
+  <div ng-repeat="group in groups" class="stream-group">
+    <h2 class="day-title">{{ group.title }}</h2>
+    <ul>
+      <li ng-repeat="item in group.items" class="{{ item.type }}">
+        <twitter-post item="item" ng-if="item.type == 'twitter'"></twitter-post>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="loading-view" ng-class="{'hidden': visible }"><span>Loading...</span></div>
+{% endraw %}

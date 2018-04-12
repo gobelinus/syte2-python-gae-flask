@@ -32,6 +32,7 @@ from operator import itemgetter
 from flask import (
     jsonify,
     make_response,
+    render_template,
     url_for,
 )
 from google.appengine.api import (
@@ -65,10 +66,21 @@ def warmup():
     return ''
 
 
+def render_partials(folder=None, path=None):
+    """
+    partials render for angular
+    """
+    if folder:
+        paths = [folder, path]
+    else:
+        paths = [path]
+    return render_template('/'.join(paths))
+
+
 # @login_required
 def home():
     """home page"""
-    return jsonify({'msg': 'Welcome'})
+    return render_template('index.html')
 
 
 def add_task(url, queue_name=constants.QUEUE_NAME_DEFAULT,

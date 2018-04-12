@@ -1,0 +1,22 @@
+<header class="main-header animate" ng-class="{'open':menuOpened}">
+  <hgroup>
+    {% set url = url_for('static',filename="img/pic.png") %}
+    <a href="#/" rel="home">
+      <span class="picture">
+        <img ng-src="{{ url }}" />
+      </span>
+      <h1 class="h3">Your Name</h1>
+     </a>
+  </hgroup>
+  <nav>
+    <ul class="main-nav">
+      <li><a href="#/twitter"><span class="icon twitter-alt"></span><span class="txt">Twitter</span></a></li>
+    </ul>
+    <!--<a href="#" class="about-link" target="_blank">About this site</a>-->
+  </nav>
+  <span class="nav-btn" ng-click="toggleMenu()">
+    <span class="nav-btn-bar nb-1"></span>
+    <span class="nav-btn-bar nb-2"></span>
+    <span class="nav-btn-bar nb-3"></span>
+  </span>
+</header>
