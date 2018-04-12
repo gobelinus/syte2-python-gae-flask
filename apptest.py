@@ -1,8 +1,34 @@
-#!/usr/bin/python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+#######################################################################
+#                                   _           _____
+#                                  / |_        / ___ `.
+#  _ .--.   _   __  .--.    _   __`| |-'.---. |_/___) |
+# [ '/'`\ \[ \ [  ]( (`\]  [ \ [  ]| | / /__\\ .'____.'
+# | \__/ | \ '/ /  `'.'.   \ '/ / | |,| \__.,/ /_____
+# | ;.__/[\_:  /  [\__) )[\_:  /  \__/ '.__.'|_______|
+# [__|     \__.'           \__.'
+#
+# app testing module
+# TODO
+#
+#######################################################################
+
+###########
+# imports #
+###########
+
+# -*- std imports -*-
 import sys
 import os
 import unittest2
 import warnings
+
+# -*- third party imports -*-
+
+# -*- local import -*-
+
 # silences Python's complaints about imports
 warnings.filterwarnings('ignore', category=UserWarning)
 
@@ -29,11 +55,11 @@ def main(sdk_path, test_path):
 
 
 if __name__ == '__main__':
-    #See: http://code.google.com/appengine/docs/python/tools/localunittesting.html
+    # http://code.google.com/appengine/docs/python/tools/localunittesting.html
     try:
-        #Path to the SDK installation
+        # Path to the SDK installation
         SDK_PATH = sys.argv[1]  # ...or hardcoded path
-        #Path to tests folder
+        # Path to tests folder
         TEST_PATH = os.path.join(os.path.dirname(os.path.abspath(__name__)),
                                  'tests')
         main(SDK_PATH, TEST_PATH)

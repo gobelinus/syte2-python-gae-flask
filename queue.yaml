@@ -1,0 +1,15 @@
+queue:
+# https://developers.google.com/appengine/docs/python/config/queue#Python_Defining_push_queues_and_processing_rates
+- name: timeline
+  rate: 10/s
+  bucket_size: 40
+  max_concurrent_requests: 5
+  retry_parameters:
+    task_retry_limit: 1
+    task_age_limit: 30m
+    min_backoff_seconds: 100
+
+# default queue for admin related tasks
+# change rate to 0 to pause it
+- name: default
+  rate: 10/s

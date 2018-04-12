@@ -54,7 +54,6 @@ asset_version.py
 
 #
 node_modules
-lib/
 
 # project specifics
 application/static/js/*

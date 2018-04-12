@@ -1,0 +1,4 @@
+cron:
+- description: fetch tweets
+  url: /admin/tweet/fetch
+  schedule: every 12 hours from 00:05 to 23:55
